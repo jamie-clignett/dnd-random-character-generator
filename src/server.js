@@ -3,15 +3,25 @@ const expressGraphQL = require('express-graphql');
 const buildSchema = require('graphql').buildSchema;
 const path = require('path');
 
-const schema = buildSchema('');
+const schema = buildSchema(`
+  type AbilityScore {
+    
+  }
+  type Race {
+    index: String!
+    name: String!
+    
+  }
 
-const cache = { };
+`);
+
+const resolvers = {};
 
 const app = express();
 
 app.use('/graphql', expressGraphQL({
   schema: schema,
-  rootValue: cache,
+  rootValue: resolvers,
   graphiql: true
 }));
 
