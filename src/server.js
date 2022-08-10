@@ -3,27 +3,27 @@ const expressGraphQL = require('express-graphql');
 const buildSchema = require('graphql').buildSchema;
 const path = require('path');
 
-const schema = buildSchema(`
-  type AbilityScore {
+// const schema = buildSchema(`
+//   type AbilityScore {
     
-  }
-  type Race {
-    index: String!
-    name: String!
-    
-  }
+//   }
+//   type Race {
+//     index: String!
+//     name: String!
 
-`);
+//   }
 
-const resolvers = {};
+// `);
+
+// const resolvers = {};
 
 const app = express();
 
-app.use('/graphql', expressGraphQL({
-  schema: schema,
-  rootValue: resolvers,
-  graphiql: true
-}));
+// app.use('/graphql', expressGraphQL({
+//   schema: schema,
+//   rootValue: resolvers,
+//   graphiql: true
+// }));
 
 app.use((req, res) => res.status(404).send('This is not the page you\'re looking for...'));
 

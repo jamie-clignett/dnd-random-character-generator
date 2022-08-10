@@ -14,4 +14,6 @@ const abilities = {
   Charisma: 1
 }
 
-
+const abilityScoresRandomizer = () => {
+  
+}

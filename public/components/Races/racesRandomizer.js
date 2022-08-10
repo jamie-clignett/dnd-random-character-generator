@@ -12,4 +12,11 @@ const races = {
   9: 'Tiefling'
 }
 
+
+const racesRandomizer = () => {
+  const result = {};
+  const ranNum = Math.ceil(Math.random() * 9);
+  result[ranNum] = races[ranNum];
+  return result;
+}
 // Extension add subRaces
