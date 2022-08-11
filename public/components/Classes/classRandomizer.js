@@ -45,12 +45,14 @@ const warlockSubclass = {
   3: 'The Great Old One'
 }
 
+
+const result = {};
+
 // if cleric(3), fighter(5), sorcerer(10), or warlock(11) is rolled then continue to their subclass list
 
 // create function that randomizes classes and checks to see if a cleric, fighter, sorcerer or warlock is rolled
 const classRandomizer = () => {
   // declare result object
-  const result = {};
   // use the random method on the math object to get a number 1 - 12
   const randomNum = Math.ceil(Math.random() * 12);
   result[randomNum] = classes[randomNum];
@@ -90,3 +92,5 @@ const classRandomizer = () => {
   return result;
 }
 // Extension add other subClasses 
+
+// export result? 

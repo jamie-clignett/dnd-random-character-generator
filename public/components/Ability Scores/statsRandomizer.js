@@ -15,5 +15,12 @@ const abilities = {
 }
 
 const abilityScoresRandomizer = () => {
-   
+   for (const prop in abilities) {
+     const randomNum = Math.ceil(Math.random() * 18);
+     abilities[prop] = randomNum;
+   }
+   return abilities;
 }
+
+
+// export abilities? 

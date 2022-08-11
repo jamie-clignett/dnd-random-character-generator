@@ -1,6 +1,6 @@
 const express = require('express');
-const expressGraphQL = require('express-graphql');
-const buildSchema = require('graphql').buildSchema;
+// const expressGraphQL = require('express-graphql');
+// const buildSchema = require('graphql').buildSchema;
 const path = require('path');
 
 // const schema = buildSchema(`
@@ -19,11 +19,18 @@ const path = require('path');
 
 const app = express();
 
+const apiRouter = require('./routes/api');
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 // app.use('/graphql', expressGraphQL({
 //   schema: schema,
 //   rootValue: resolvers,
 //   graphiql: true
 // }));
+
+app.use('/api', apiRouter);
 
 app.use((req, res) => res.status(404).send('This is not the page you\'re looking for...'));
 
@@ -41,3 +48,5 @@ app.use((err, req, res, next) => {
 app.listen(3000, () => {
   console.log('Listening at port: 3000');
 });
+
+module.exports = app;
