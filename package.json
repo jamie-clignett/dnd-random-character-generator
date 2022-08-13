@@ -2,11 +2,11 @@
   "name": "dnd-random-character-generator",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/index.js",
+  "main": "./src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server .",
-    "build": "Webpack ."
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -22,9 +22,13 @@
   "devDependencies": {
     "@babel/core": "^7.18.10",
     "@babel/preset-env": "^7.18.10",
+    "@types/node": "^18.7.1",
     "babel-loader": "^8.2.5",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.9.3"
+    "webpack-dev-server": "^4.9.3",
+    "node-polyfill-webpack-plugin": "^2.0.1"
   },
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.18.10",
@@ -36,6 +40,7 @@
     "graphql": "^16.5.0",
     "node-fetch": "^3.2.10",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "request": "^2.79.0"
   }
 }

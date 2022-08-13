@@ -1,4 +1,5 @@
 // import React
+import React from 'react';
 
 // highest rolled can be 18
 
@@ -22,5 +23,9 @@ const abilityScoresRandomizer = () => {
    return abilities;
 }
 
+console.log(abilityScoresRandomizer());
+
 
 // export abilities? 
+
+export default abilities;

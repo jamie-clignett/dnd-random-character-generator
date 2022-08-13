@@ -7,19 +7,19 @@ const dndController = require('../controllers/dndController');
 const router = express.Router();
 
 // create stats route
-router.get('/',
-  dndController.getStats,
-  (req, res) => res.status(200).json(res.locals)
-);
+// router.get('/',
+//   dndController.getStats,
+//   (req, res) => res.status(200).json(res.locals)
+// );
 // create classes route
 router.get('/',
   dndController.getClasses,
-  (req, res) => res.status(200).json(res.locals)
+  (req, res) => res.status(200).json(res.locals.classData)
 );
 // create races route
 router.get('/',
   dndController.getRaces,
-  (req, res) => res.status(200).json(res.locals)
+  (req, res) => res.status(200).json(res.locals.raceData)
 );
 // extension: 
 

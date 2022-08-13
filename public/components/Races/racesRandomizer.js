@@ -1,4 +1,5 @@
 // import react
+import React from 'react'
 
 const races = {
   1: 'Dwarf',
@@ -12,13 +13,16 @@ const races = {
   9: 'Tiefling'
 }
 
-const result = {};
+let result;
 
 const racesRandomizer = () => {
   const ranNum = Math.ceil(Math.random() * 9);
-  result[ranNum] = races[ranNum];
+  result = races[ranNum];
   return result;
 }
 // Extension add subRaces
 
+console.log(racesRandomizer());
 // export result;
+
+export default result;

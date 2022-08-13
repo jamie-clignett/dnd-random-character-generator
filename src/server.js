@@ -1,7 +1,8 @@
 const express = require('express');
-// const expressGraphQL = require('express-graphql');
-// const buildSchema = require('graphql').buildSchema;
+const { expressGraphQL } = require('express-graphql');
+const { buildSchema } = require('graphql').buildSchema;
 const path = require('path');
+// const bodyParser = require('body-parser');
 
 // const schema = buildSchema(`
 //   type AbilityScore {
@@ -29,6 +30,10 @@ app.use(express.urlencoded({ extended: true }));
 //   rootValue: resolvers,
 //   graphiql: true
 // }));
+
+app.get('/', (req, res) => {
+  res.status(200).sendFile(path.resolve(__dirname, '../public/index.html'));
+});
 
 app.use('/api', apiRouter);
 
